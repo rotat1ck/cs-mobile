@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="control_elements.MainPage">
+
+    <Grid>
+        <Button Text="Click" WidthRequest="100" 
+                HeightRequest="50" Clicked="ClickButton" Margin="0,200,0,0" />
+    </Grid>
+
+</ContentPage>
