@@ -74,14 +74,28 @@
         <!-- Надпись продуктов-->
         <Label Padding="40,0,40,22" Text="POPULAR PRODUCTS"
                FontFamily="MonumentExtended" FontSize="18"/>
-
+        
+        <!-- Шмотки -->
         <ScrollView Padding="40,0,40,30" Orientation="Vertical">
             <VerticalStackLayout Spacing="19">
-                <Frame HeightRequest="273" MinimumWidthRequest="350" CornerRadius="20">
+                <!-- Первая шмотка -->
+                <Frame HeightRequest="273" MinimumWidthRequest="350" CornerRadius="20" BorderColor="#FFFFFF">
+                    <!-- Фон -->
                     <Frame.Background>
-                        <LinearGradientBrush StartPoint="0.7,0" EndPoint="0.3,1" >
-                            <GradientStop Color="#F5F6F1" Offset="0.1861" />
+                        <LinearGradientBrush StartPoint="0.3,0" EndPoint="0.7,1">
                             <GradientStop Color="#E6E5E3" Offset="0.6563" />
+                            <GradientStop Color="#F5F6F1" Offset="0.1861" />
+                        </LinearGradientBrush>
+                    </Frame.Background>
+                </Frame>
+                
+                <!-- Вторая шмотка -->
+                <Frame HeightRequest="273" MinimumWidthRequest="350" CornerRadius="20" BorderColor="#FFFFFF">
+                    <!-- Фон -->
+                    <Frame.Background>
+                        <LinearGradientBrush StartPoint="0.3,0" EndPoint="0.7,1" >
+                            <GradientStop Color="#E6E5E3" Offset="0.6563" />
+                            <GradientStop Color="#F5F6F1" Offset="0.1861" />
                         </LinearGradientBrush>
                     </Frame.Background>
                 </Frame>
