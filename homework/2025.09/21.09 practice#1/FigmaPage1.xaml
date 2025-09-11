@@ -2,11 +2,90 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="practice1.FigmaPage1"
+             BackgroundColor="#FFFFFF"
+             MinimumWidthRequest="430"
              >
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <!-- Вверх -->
+        <Grid Padding="40,40,40,30" ColumnSpacing="10" HorizontalOptions="Fill">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Категории -->
+            <Frame Grid.Column="0" HeightRequest="56" WidthRequest="56" CornerRadius="28" 
+                   BorderColor="#FFFFFF" BackgroundColor="#F6F6F6">
+                <Image Source="category.png" Aspect="AspectFill"/>
+            </Frame>
+
+            <!-- Лого -->
+            <Image Grid.Column="1" Source="logo.png" Aspect="Center" HeightRequest="20" WidthRequest="150" HorizontalOptions="Center" />
+
+            <!-- Корзина -->
+            <Frame Grid.Column="2" HeightRequest="56" WidthRequest="56" CornerRadius="28" 
+                   BorderColor="#FFFFFF" BackgroundColor="#F6F6F6">
+                <Image Source="bag.png" Aspect="AspectFill"/>
+            </Frame>
+        </Grid>
+
+        <!-- Горизонтальная листалка -->
+        <ScrollView Padding="40,0,40,24" Orientation="Horizontal">
+            <HorizontalStackLayout Spacing="13">
+                <!-- Желтая кнопка -->
+                <Frame HeightRequest="169" WidthRequest="169" CornerRadius="20"
+                       BackgroundColor="#F4C600" BorderColor="#FFFFFF">
+                    <Grid Padding="10,10,10,10">
+                        <Label FontFamily="MonumentExtended" FontSize="14" 
+                               Text="TRENDING PRODUCTS" TextColor="#FFFFFF"
+                               MinimumWidthRequest="112"/>
+                        <Image Source="arrow_filled.png" Aspect="AspectFit" 
+                               HeightRequest="28" WidthRequest="43" HorizontalOptions="End" VerticalOptions="End"/>
+                    </Grid>
+                </Frame>
+
+                <!-- Красная кнопка -->
+                <Frame HeightRequest="169" WidthRequest="169" CornerRadius="20"
+                       BackgroundColor="#EB6434" BorderColor="#FFFFFF">
+                    <Grid Padding="10,10,10,10">
+                        <Label FontFamily="MonumentExtended" FontSize="14" 
+                               Text="SALE PRODUCTS" TextColor="#FFFFFF"
+                               MinimumWidthRequest="112"/>
+                        <Image Source="arrow_unfilled.png" Aspect="AspectFit" 
+                               HeightRequest="28" WidthRequest="43" HorizontalOptions="End" VerticalOptions="End"/>
+                    </Grid>
+                </Frame>
+
+                <!-- Оранжевая кнопка -->
+                <Frame HeightRequest="169" WidthRequest="169" CornerRadius="20" 
+                       BackgroundColor="#EBA534" BorderColor="#FFFFFF">
+                    <Grid Padding="10,10,10,10">
+                        <Label FontFamily="MonumentExtended" FontSize="14" 
+                               Text="PIZDOS" TextColor="#FFFFFF" 
+                               MinimumWidthRequest="112"/>
+                        <Image Source="arrow_filled.png" Aspect="AspectFit" 
+                               HeightRequest="28" WidthRequest="43" HorizontalOptions="End" VerticalOptions="End"/>
+                    </Grid>
+                </Frame>
+            </HorizontalStackLayout>
+        </ScrollView>
+        
+        <!-- Надпись продуктов-->
+        <Label Padding="40,0,40,22" Text="POPULAR PRODUCTS"
+               FontFamily="MonumentExtended" FontSize="18"/>
+
+        <ScrollView Padding="40,0,40,30" Orientation="Vertical">
+            <VerticalStackLayout Spacing="19">
+                <Frame HeightRequest="273" MinimumWidthRequest="350" CornerRadius="20">
+                    <Frame.Background>
+                        <LinearGradientBrush StartPoint="0.7,0" EndPoint="0.3,1" >
+                            <GradientStop Color="#F5F6F1" Offset="0.1861" />
+                            <GradientStop Color="#E6E5E3" Offset="0.6563" />
+                        </LinearGradientBrush>
+                    </Frame.Background>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
     </VerticalStackLayout>
 </ContentPage>
