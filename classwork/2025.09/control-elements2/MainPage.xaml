@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="control_elements2.MainPage">
+
+    <StackLayout Orientation="Vertical">
+        <BoxView Color="Aquamarine" CornerRadius="20"
+                 WidthRequest="100" HeightRequest="100"></BoxView>
+        
+        <Label x:Name="label1" Text="My Text" VerticalOptions="Center" HorizontalOptions="Center" 
+               TextColor="Azure" BackgroundColor="Black"
+               FontFamily="Unbounded"
+               FontSize="48"
+               FontAttributes="Bold"/>
+        
+        <Entry x:Name="entry1" Placeholder="Введите значение " CharacterSpacing="2"
+               ClearButtonVisibility="WhileEditing" Keyboard="Chat"
+               FontFamily="Unbounded" FontSize="16"
+               PlaceholderColor="DarkRed" Text="Empty" SelectionLength="4"
+               MaxLength="32" VerticalTextAlignment="Center" HorizontalTextAlignment="End"
+               TextChanged="Entry_TextChanged"/>
+        
+        <Entry x:Name="entry2" IsPassword="True"/>
+        
+        <Editor Placeholder="Test" />
+        
+        <TimePicker WidthRequest="250" HeightRequest="50" 
+                    HorizontalOptions="Center" VerticalOptions="Center"/>
+        
+        <Image Aspect="Center" IsAnimationPlaying="True"
+               IsOpaque="False" Source="rus.jpg" />
+        
+        <Button x:Name="button1" Text="Click" Clicked="Button_Clicked"></Button>
+        
+        
+    </StackLayout>
+
+</ContentPage>
