@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="practice1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:practice1"
+    Shell.FlyoutBehavior="Disabled"
+    Title="practice1">
+
+    <ShellContent
+       
+        ContentTemplate="{DataTemplate local:FigmaPage1}"
+        Route="FigmaPage1" />
+
+</Shell>
