@@ -5,7 +5,9 @@
              BackgroundColor="#FFFFFF"
              MinimumWidthRequest="430"
              >
-    <VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout>
+        
         <!-- Вверх -->
         <Grid Padding="40,40,40,30" ColumnSpacing="10" HorizontalOptions="Fill">
             <Grid.ColumnDefinitions>
@@ -76,30 +78,126 @@
                FontFamily="MonumentExtended" FontSize="18"/>
         
         <!-- Шмотки -->
-        <ScrollView Padding="40,0,40,30" Orientation="Vertical">
-            <VerticalStackLayout Spacing="19">
+        <ScrollView Padding="40,0,40,30" MinimumHeightRequest="270" MaximumHeightRequest="565">
+            <StackLayout Spacing="19">
                 <!-- Первая шмотка -->
-                <Frame HeightRequest="273" MinimumWidthRequest="350" CornerRadius="20" BorderColor="#FFFFFF">
-                    <!-- Фон -->
-                    <Frame.Background>
-                        <LinearGradientBrush StartPoint="0.3,0" EndPoint="0.7,1">
-                            <GradientStop Color="#E6E5E3" Offset="0.6563" />
-                            <GradientStop Color="#F5F6F1" Offset="0.1861" />
-                        </LinearGradientBrush>
-                    </Frame.Background>
+                <Frame HeightRequest="273" MinimumWidthRequest="350" CornerRadius="20" BorderColor="#FFFFFF" Padding="0">
+                    <Grid>
+                        <!-- Фон -->
+                        <Grid.Background>
+                            <LinearGradientBrush StartPoint="0.3,0" EndPoint="0.7,1">
+                                <GradientStop Color="#F5F6F1" Offset="0.1861" />
+                                <GradientStop Color="#E6E5E3" Offset="0.6563" />
+                            </LinearGradientBrush>
+                        </Grid.Background>
+
+                        <Image Source="first_item.png" Aspect="AspectFit"/>
+
+                        <Grid>
+                            <!-- Левое наполнение карточки -->
+                            <StackLayout Spacing="10" HorizontalOptions="Start" VerticalOptions="End" Margin="25,0,0,22">
+                                <!-- Название -->
+                                <Label HorizontalOptions="Start" VerticalOptions="End"
+                                       HeightRequest="38" WidthRequest="248"
+                                       FontFamily="MonumentExtended" FontSize="16" Text="Avoine Hooded 
+                                       Quilted Jacket"/>
+                                <!-- Ценник -->
+                                <Frame HeightRequest="31" WidthRequest="103" Padding="0"
+                                       VerticalOptions="End" HorizontalOptions="Start"
+                                       BackgroundColor="#FFFFFF" BorderColor="Transparent">
+                                    <Label HorizontalOptions="Center" VerticalOptions="Center"
+                                           FontFamily="MonumentExtended" Text="$ 1500" FontSize="14" TextColor="#EB6434"/>
+                                </Frame>
+                            </StackLayout>
+
+                            <!--Правое Наполнение карточки -->
+                            <Grid Padding="20,20,20,20">
+                                <!-- Оценка -->
+                                <Frame VerticalOptions="Start" HorizontalOptions="End" 
+                                       HeightRequest="30" WidthRequest="70" Padding="0"
+                                       BackgroundColor="#FFFFFF" BorderColor="Transparent">
+                                    <HorizontalStackLayout Padding="10,0,0,0" Spacing="5">
+                                        <Image Source="star.png" Aspect="AspectFit" 
+                                               HorizontalOptions="Start" VerticalOptions="Center"
+                                               HeightRequest="13" WidthRequest="13"/>
+                                        <Label Text="4.7" VerticalOptions="Center"
+                                               FontFamily="MonumentExtended" FontSize="14"
+                                               HeightRequest="15" WidthRequest="30"/>
+                                    </HorizontalStackLayout>
+                                </Frame>
+
+                                <!-- Добавить в корзину -->
+                                <Frame VerticalOptions="End" HorizontalOptions="End" Margin="0,0,-7,-5"
+                                       HeightRequest="65" WidthRequest="65" CornerRadius="15"
+                                       BackgroundColor="#000000" BorderColor="Transparent">
+                                    <Image Source="cart.png" Aspect="AspectFill"
+                                           WidthRequest="20" HeightRequest="23"/>
+                                </Frame>
+                            </Grid>
+                        </Grid>
+                    </Grid>
                 </Frame>
-                
+
                 <!-- Вторая шмотка -->
-                <Frame HeightRequest="273" MinimumWidthRequest="350" CornerRadius="20" BorderColor="#FFFFFF">
-                    <!-- Фон -->
-                    <Frame.Background>
-                        <LinearGradientBrush StartPoint="0.3,0" EndPoint="0.7,1" >
-                            <GradientStop Color="#E6E5E3" Offset="0.6563" />
-                            <GradientStop Color="#F5F6F1" Offset="0.1861" />
-                        </LinearGradientBrush>
-                    </Frame.Background>
+                <Frame HeightRequest="273" MinimumWidthRequest="350" CornerRadius="20" BorderColor="#FFFFFF" Padding="0">
+                    <Grid>
+                        <!-- Фон -->
+                        <Grid.Background>
+                            <LinearGradientBrush StartPoint="0.3,0" EndPoint="0.7,1">
+                                <GradientStop Color="#F5F6F1" Offset="0.1861" />
+                                <GradientStop Color="#E6E5E3" Offset="0.6563" />
+                            </LinearGradientBrush>
+                        </Grid.Background>
+
+                        <Image Source="second_item.png" Aspect="AspectFit"/>
+
+                        <Grid>
+                            <!-- Левое наполнение карточки -->
+                            <StackLayout Spacing="10" HorizontalOptions="Start" VerticalOptions="End" Margin="25,0,0,22">
+                                <!-- Название -->
+                                <Label HorizontalOptions="Start" VerticalOptions="End"
+                                       HeightRequest="38" WidthRequest="248"
+                                       FontFamily="MonumentExtended" FontSize="16" Text="Hooded Metallic 
+                                       Shell Jacket"/>
+                                <!-- Ценник -->
+                                <Frame HeightRequest="31" WidthRequest="103" Padding="0"
+                                       VerticalOptions="End" HorizontalOptions="Start"
+                                       BackgroundColor="#FFFFFF" BorderColor="Transparent">
+                                    <Label HorizontalOptions="Center" VerticalOptions="Center"
+                                           FontFamily="MonumentExtended" Text="$1,050" FontSize="14" TextColor="#F4C600"/>
+                                </Frame>
+                            </StackLayout>
+
+                            <!--Правое Наполнение карточки -->
+                            <Grid Padding="20,20,20,20">
+                                <!-- Оценка -->
+                                <Frame VerticalOptions="Start" HorizontalOptions="End" 
+                                       HeightRequest="30" WidthRequest="70" Padding="0"
+                                       BackgroundColor="#FFFFFF" BorderColor="Transparent">
+                                    <HorizontalStackLayout Padding="10,0,0,0" Spacing="5">
+                                        <Image Source="star.png" Aspect="AspectFit" 
+                                               HorizontalOptions="Start" VerticalOptions="Center" 
+                                               HeightRequest="13" WidthRequest="13"/>
+                                        <Label Text="4.7" VerticalOptions="Center"
+                                               FontFamily="MonumentExtended" FontSize="14"
+                                               HeightRequest="15" WidthRequest="30"/>
+                                    </HorizontalStackLayout>
+                                </Frame>
+
+                                <!-- Добавить в корзину -->
+                                <Frame VerticalOptions="End" HorizontalOptions="End" Margin="0,0,-7,-5"
+                                       HeightRequest="65" WidthRequest="65" CornerRadius="15"
+                                       BackgroundColor="#000000" BorderColor="Transparent">
+                                    <Image Source="cart.png" Aspect="AspectFill"
+                                           WidthRequest="20" HeightRequest="23"/>
+                                </Frame>
+                            </Grid>
+                        </Grid>
+                    </Grid>
                 </Frame>
-            </VerticalStackLayout>
+            </StackLayout>
         </ScrollView>
+            
     </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
