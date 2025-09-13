@@ -8,8 +8,6 @@
     Title="practice1">
 
     <ShellContent
-       
-        ContentTemplate="{DataTemplate local:FigmaPage1}"
-        Route="FigmaPage1" />
-
+        ContentTemplate="{DataTemplate local:FigmaPage2}"
+        Route="" />
 </Shell>

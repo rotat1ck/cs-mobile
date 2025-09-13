@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="practice1.FigmaPage2"
+             MinimumWidthRequest="430">
+    <ScrollView>
+        <VerticalStackLayout>
+            <!-- Вверх -->
+            <Grid Padding="40,40,40,30" ColumnSpacing="10" HorizontalOptions="Fill">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Вернуться -->
+                <Frame Grid.Column="0" HeightRequest="56" WidthRequest="56" CornerRadius="28" 
+           BorderColor="#FFFFFF" BackgroundColor="#F6F6F6">
+                    <Image Source="arrow_back.png" Aspect="AspectFit"/>
+                </Frame>
+
+                <!-- Лого -->
+                <Image Grid.Column="1" Source="logo.png" Aspect="Center" HeightRequest="20" WidthRequest="150" HorizontalOptions="Center" />
+
+                <!-- Корзина -->
+                <Frame Grid.Column="2" HeightRequest="56" WidthRequest="56" CornerRadius="28" 
+           BorderColor="#FFFFFF" BackgroundColor="#F6F6F6">
+                    <Image Source="bag.png" Aspect="AspectFit"/>
+                </Frame>
+            </Grid>
+
+            <!-- Большая картинка -->
+            <Grid Padding="40,0,40,16" HeightRequest="326" MinimumWidthRequest="350">
+                <Frame CornerRadius="20" BorderColor="Transparent" Padding="0">
+                    <!-- Фон -->
+                    <Frame.Background>
+                        <LinearGradientBrush StartPoint="0.7,0" EndPoint="0.3,1">
+                            <GradientStop Color="#F5F6F1" Offset="0.1861" />
+                            <GradientStop Color="#E6E5E3" Offset="0.6563" />
+                        </LinearGradientBrush>
+                    </Frame.Background>
+
+                    <!-- Внутренности -->
+                    <Grid>
+                        <!-- Картинка -->
+                        <Image Source="big_image.png" Aspect="AspectFit"></Image>
+
+                        <!-- Оценка -->
+                        <Frame VerticalOptions="Start" HorizontalOptions="End" 
+                               HeightRequest="30" WidthRequest="70" Padding="0" Margin="20"
+                               BackgroundColor="#FFFFFF" BorderColor="Transparent">
+                            <HorizontalStackLayout Padding="10,0,0,0" Spacing="5">
+                                <Image Source="star.png" Aspect="AspectFit" 
+                                       HorizontalOptions="Start" VerticalOptions="Center"
+                                       HeightRequest="13" WidthRequest="13"/>
+                                <Label Text="4.7" VerticalOptions="Center"
+                                       FontFamily="MonumentExtended" FontSize="14"
+                                       HeightRequest="15" WidthRequest="30"/>
+                            </HorizontalStackLayout>
+                        </Frame>
+                    </Grid>
+                </Frame>
+            </Grid>
+
+            <!-- Мелкие картинки -->
+            <Grid Padding="40,0,40,24" ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <!-- Первая картинка -->
+                <Frame Grid.Column="0" CornerRadius="20" BorderColor="Transparent" Padding="0"
+                       HeightRequest="110" MinimumWidthRequest="110">
+                    <!-- Фон -->
+                    <Frame.Background>
+                        <LinearGradientBrush StartPoint="0.7,0" EndPoint="0.3,1">
+                            <GradientStop Color="#F5F6F1" Offset="0.1861" />
+                            <GradientStop Color="#E6E5E3" Offset="0.6563" />
+                        </LinearGradientBrush>
+                    </Frame.Background>
+                    
+                    <!-- Картинка -->
+                    <Image Source="small_image1.png" Aspect="AspectFit"></Image>
+                </Frame>
+
+                <!-- Вторая картинка -->
+                <Frame Grid.Column="1" CornerRadius="20" BorderColor="Transparent" Padding="0"
+                       HeightRequest="110" MinimumWidthRequest="110">
+                    <!-- Фон -->
+                    <Frame.Background>
+                        <LinearGradientBrush StartPoint="0.7,0" EndPoint="0.3,1">
+                            <GradientStop Color="#F5F6F1" Offset="0.1861" />
+                            <GradientStop Color="#E6E5E3" Offset="0.6563" />
+                        </LinearGradientBrush>
+                    </Frame.Background>
+
+                    <!-- Картинка -->
+                    <Image Source="small_image2.png" Aspect="AspectFit"></Image>
+                </Frame>
+
+                <!-- Третья картинка -->
+                <Frame Grid.Column="2" CornerRadius="20" BorderColor="Transparent" Padding="0"
+                       HeightRequest="110" MinimumWidthRequest="110">
+                    <!-- Фон -->
+                    <Frame.Background>
+                        <LinearGradientBrush StartPoint="0.7,0" EndPoint="0.3,1">
+                            <GradientStop Color="#F5F6F1" Offset="0.1861" />
+                            <GradientStop Color="#E6E5E3" Offset="0.6563" />
+                        </LinearGradientBrush>
+                    </Frame.Background>
+
+                    <!-- Картинка -->
+                    <Image Source="small_image3.png" Aspect="AspectFit"></Image>
+                </Frame>
+            </Grid>
+            
+            <!-- Информация -->
+            <Grid Padding="40,0,40,20">
+                <!-- Название -->
+                <Label HorizontalOptions="Start" MaximumWidthRequest="300" FontFamily="MonumentExtended" FontSize="22" 
+                       FontAttributes="Bold" Text="Avoine Hooded 
+                       Quilted Jacket"></Label>
+                <!-- Закладка -->
+                <Image HorizontalOptions="End" Source="bookmark.png" HeightRequest="20" WidthRequest="17"
+                       Aspect="AspectFit" Margin="0,0,17,0"></Image>
+            </Grid>
+
+            <!-- Выборы -->
+            <Grid Padding="40,0,40,21" ColumnSpacing="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <!-- Выбор цвета -->
+                <Frame Grid.Column="0" BackgroundColor="#F5F5F5" MinimumWidthRequest="169" HeightRequest="122" Padding="0">
+                    <Grid>
+                        <VerticalStackLayout>
+                            <!-- Надпись -->
+                            <Label FontFamily="MonumentExtended" FontSize="14" HorizontalOptions="Start"
+                                   Text="CHOOSE COLOR" WidthRequest="103" Padding="19,21,0,0"/>
+                        
+                            <!-- Кнопка выбора -->
+                            <Frame Margin="19,11,21,26" BorderColor="Transparent" BackgroundColor="#000000"
+                                   Padding="10,8,8,10" HeightRequest="30" WidthRequest="130" HorizontalOptions="Start">
+                                <HorizontalStackLayout Spacing="9">
+                                    <Label Text="BEIGE" TextColor="#FFFFFF"
+                                           FontFamily="MonumentExtended" FontSize="12" FontAttributes="Bold"/>
+                                    <Frame HeightRequest="16" WidthRequest="37"
+                                           BackgroundColor="#EFEEEA" BorderColor="Transparent"/>
+                                    <Image HeightRequest="7" WidthRequest="12"
+                                           Source="dropdown_white.png" Aspect="AspectFit"/>
+                                </HorizontalStackLayout>
+                            </Frame>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Выбор размера -->
+                <Frame Grid.Column="1" BackgroundColor="#000000" MinimumWidthRequest="169" HeightRequest="122" Padding="0">
+                    <Grid>
+                        <VerticalStackLayout>
+                            <!-- Надпись -->
+                            <Label FontFamily="MonumentExtended" FontSize="14" HorizontalOptions="Start"
+                                   Text="CHOOSE SIZE" WidthRequest="103" Padding="19,21,0,0" TextColor="#FFFFFF"/>
+
+                            <!-- Кнопка выбора -->
+                            <Frame Margin="19,11,21,26" BorderColor="Transparent" BackgroundColor="#FFFFFF"
+                                   Padding="10,8,8,10" HeightRequest="30" WidthRequest="130" HorizontalOptions="Start">
+                                <HorizontalStackLayout Spacing="9">
+                                    <Label Text="MEDIUM"
+                                           FontFamily="MonumentExtended" FontSize="12" FontAttributes="Bold"/>
+                                    <Image HeightRequest="7" WidthRequest="12"
+                                           Source="dropdown_black.png" Aspect="AspectFit"/>
+                                </HorizontalStackLayout>
+                            </Frame>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
+            </Grid>
+
+            <!-- К оплате -->
+            <Grid Padding="40,0,40,0" HeightRequest="82" >
+                <Frame BackgroundColor="#EB6434" CornerRadius="15" BorderColor="Transparent"
+                       Padding="35,30,35,30">
+                    <Grid>
+                        <!-- Левая надпись -->
+                        <Grid>
+                            <!-- Надпись -->
+                            <Label Text="CHECKOUT" FontFamily="MonumentExtended" 
+                                       FontSize="14" TextColor="#FFFFFF" VerticalOptions="Center"
+                                       WidthRequest="104" HorizontalOptions="Start"/>
+
+                            <!-- Стрелочка -->
+                            <Image HeightRequest="13" WidthRequest="19" 
+                                   HorizontalOptions="Start" Margin="114,0,0,0"
+                                   Source="arrow_checkout.png" Aspect="AspectFit"/>
+                        </Grid>
+
+                        <!-- Ценник -->
+                        <Label Text="$ 1500" HorizontalOptions="End"
+                               FontFamily="MonumentExtended" FontSize="18"/>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
