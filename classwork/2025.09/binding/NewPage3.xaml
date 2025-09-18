@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:binding"
+             x:Class="binding.NewPage3"
+             Title="NewPage3">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:DateTimeToLocalConverter x:Key="dateConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Padding="20">
+        <Label Text="{Binding Source={x:Reference Name=datePicker},
+            Path=Date,
+            Converter={StaticResource dateConverter}}"/>
+        <DatePicker x:Name="datePicker" />
+    </StackLayout>
+    
+</ContentPage>

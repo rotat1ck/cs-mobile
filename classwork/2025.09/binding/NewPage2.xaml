@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="binding.NewPage2"
+             Title="NewPage2">
+
+    <StackLayout>
+        <Entry x:Name="entry" />
+        <Label BindingContext="{x:Reference entry}" Text="{Binding Path=Text, 
+            StringFormat='Сообщение: {0}'}" />
+    </StackLayout>
+</ContentPage>
