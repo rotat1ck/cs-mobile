@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="datepicker__timepicker.MainPage">
+
+    <StackLayout Padding="0">
+        <Label x:Name="label" Text="Выберите дату" />
+        <DatePicker Format="d" DateSelected="DateSelected" >
+            <DatePicker.MinimumDate>7/10/2024</DatePicker.MinimumDate>
+            <DatePicker.MaximumDate>7/20/2026</DatePicker.MaximumDate>
+        </DatePicker>
+    </StackLayout>
+
+</ContentPage>
