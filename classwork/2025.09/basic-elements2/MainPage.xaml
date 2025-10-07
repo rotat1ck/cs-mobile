@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="basic_elements2.MainPage">
+
+    <StackLayout>
+        <Switch x:Name="switch" IsToggled="True"/>
+        <Label x:Name="label" FontSize="16" BindingContext="{x:Reference switch}" Text="{Binding Path=Value, 
+            StringFormat='Значение {0}'}"/>
+
+        <Label x:Name="statusLabel" FontSize="18" 
+               Text="Статус: холост/не замужем" />
+        <StackLayout>
+            <CheckBox x:Name="statusCheckBox" CheckedChanged="statusCheckBox_CheckedChanged"/>
+            <Label FontSize="16" Text="женат/замужем"/>
+        </StackLayout>
+
+        <StackLayout>
+            <Label x:Name="header" Text="Выберите свой любимый ЯП"/>
+            <RadioButton GroupName="lang" Content="C#" IsChecked="True" CheckedChanged="RadioButton_CheckedChanged"/>
+            <RadioButton GroupName="lang" Content="C++" CheckedChanged="RadioButton_CheckedChanged"/>
+            <RadioButton GroupName="lang" Content="Python" CheckedChanged="RadioButton_CheckedChanged"/>
+        </StackLayout>
+
+        <StackLayout>
+            <Picker x:Name="langPicker" Title="ЯП"
+                    SelectedIndexChanged="langPicker_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>C#</x:String>
+                    <x:String>C++</x:String>
+                    <x:String>Python</x:String>
+                </Picker.Items>
+            </Picker>
+        </StackLayout>
+
+        <StackLayout>
+            <TableView HorizontalOptions="Center">
+                <TableView.Root>
+                    <TableRoot Title="ПО">
+                        <TableSection Title="ЯП">
+                            <TextCell Text="Python" Detail="..." />
+                            <TextCell Text="C#" Detail="2000$" />
+                        </TableSection>
+                        <TableSection Title="BD">
+                            <TextCell Text="MySql" Detail="101$" />
+                            <TextCell Text="MS SQL" Detail="2000$" />
+                        </TableSection>
+                    </TableRoot>
+                </TableView.Root>
+            </TableView>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
