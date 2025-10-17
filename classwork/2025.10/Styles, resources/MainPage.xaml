@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Styles__resources.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--<Color x:Key="textColor">#004D40</Color>
+            <Color x:Key="backColor">#80CBC4</Color>
+            <x:Double x:Key="margin">10</x:Double>-->
+            <Color x:Key="textColor">#1976D2</Color>ц
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="#cca110"/>
+                <Setter Property="BackgroundColor" Value="#80ccff"/>
+                <Setter Property="Margin" Value="10"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Padding="10">
+        <!--<Button Text="Windows10" TextColor="{StaticResource Key=textColor}"
+                BackgroundColor="{StaticResource Key=backColor}" 
+                Margin="{StaticResource Key=margin}" />
+        <Button Text="Windows11" TextColor="{StaticResource Key=textColor}"
+                BackgroundColor="{StaticResource Key=backColor}" 
+                Margin="{StaticResource Key=margin}" />-->
+        
+        <!--<Button Text="Change" BackgroundColor="White"
+                WidthRequest="120"
+                TextColor="{DynamicResource textColor}"
+                Clicked="Button_Clicked"/>-->
+
+        <Button Text="Win10" Style="{StaticResource buttonStyle}"/>
+        <Button Text="Win11" Style="{StaticResource buttonStyle}"/>
+    </StackLayout>
+
+</ContentPage>
