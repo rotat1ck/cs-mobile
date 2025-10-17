@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:properties"
+             x:Class="properties.MainPage">
+
+    <StackLayout Padding="20">
+        <Entry x:Name="entry"/>
+        <Label>
+            <Label.Style>
+                <Binding Source="{x:Reference entry}" Path="Text">
+                    <Binding.Converter>
+                        <local:StringToStyleConverter>
+                            <local:StringToStyleConverter.ApprovedStatus>
+                                <Style TargetType="Label">
+                                    <Setter Property="Text" Value="Доступ разрешен" />
+                                    <Setter Property="TextColor" Value="Green" />
+                                </Style>
+                            </local:StringToStyleConverter.ApprovedStatus>
+
+                            <local:StringToStyleConverter.DeniedStatus>
+                                <Style TargetType="Label">
+                                    <Setter Property="Text" Value="Доступ запрещен" />
+                                    <Setter Property="TextColor" Value="Red" />
+                                </Style>
+                            </local:StringToStyleConverter.DeniedStatus>
+                        </local:StringToStyleConverter>
+                    </Binding.Converter>
+                </Binding>
+            </Label.Style>
+        </Label>
+    </StackLayout>
+
+</ContentPage>
