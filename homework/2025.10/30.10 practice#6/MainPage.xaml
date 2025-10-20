@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="practice6.MainPage">
+    <StackLayout>
+        <StackLayout Padding="20">
+            <Label Text="Введите c: " />
+            <Entry x:Name="entry_c" TextChanged="entry1_TextChanged"></Entry>
+            <Label Text="Введите d: " />
+            <Entry x:Name="entry_d" TextChanged="entry1_TextChanged"></Entry>
+            
+            <Label x:Name="resultLabel" Text="Результат: " />
+        </StackLayout>
+
+        <StackLayout Padding="20">
+            <Label Text="Введите число"/>
+            <Entry x:Name="input" />
+            <Picker x:Name="picker" Title="В какую систему перевести" 
+                    SelectedIndexChanged="picker_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Двоичная</x:String>
+                    <x:String>Восьмиричная</x:String>
+                    <x:String>Шестнадцатиричная</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label x:Name="output2" Text="Результат: " />
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
