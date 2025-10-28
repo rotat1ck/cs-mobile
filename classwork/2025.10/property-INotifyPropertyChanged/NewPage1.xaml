@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="property_INotifyPropertyChanged.NewPage1"
+             xmlns:local="clr-namespace:property_INotifyPropertyChanged"
+             Title="NewPage1">
+
+    <ContentPage.Resources>
+        <local:StringToColorConverter x:Key="converter" />
+    </ContentPage.Resources>
+
+    <StackLayout Padding="20">
+        <Entry Text="#000"
+               TextColor="{Binding Source={RelativeSource Self}, 
+            Path=Text, Converter={StaticResource converter}}" />
+    </StackLayout>
+</ContentPage>

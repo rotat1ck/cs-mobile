@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:property_INotifyPropertyChanged"
+             x:Class="property_INotifyPropertyChanged.MainPage">
+
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <local:User x:Key="user" Name="Ivan" Age="20" />
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+
+    <!--<StackLayout Padding="20" BindingContext="{StaticResource user}">
+        <Label Text="Name" />
+        <Label Text="{Binding Path=Name}" FontAttributes="Bold" />
+        <Label Text="Age" />
+        <Label Text="{Binding Path=Age}" FontAttributes="Bold" />
+        <Button Text="+" WidthRequest="60" HorizontalOptions="Start"
+                Clicked="Button_Clicked"/>
+    </StackLayout>-->
+
+    <ContentPage.Resources>
+        <local:User x:Key="user" Name="Ivan" Age="20" />
+    </ContentPage.Resources>
+    <StackLayout Padding="20" BindingContext="{x:StaticResource user}">
+        <Label Text="{Binding Source={RelativeSource AncestorType={x:Type local:User}}, Path=Name}"/>
+        <Label Text="{Binding Source={RelativeSource AncestorType={x:Type local:User}}, Path=Age}"/>
+    </StackLayout>
+</ContentPage>
