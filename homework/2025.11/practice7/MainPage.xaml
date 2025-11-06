@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:practice7"
+             x:Class="practice7.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:DataViewModel x:Key="vm"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout BindingContext="{StaticResource vm}">
+        <Grid Padding="10" ColumnDefinitions="Auto,*">
+            <Label Grid.Column="0" Text="Фамилия: " VerticalTextAlignment="Center"/>
+            <Entry Grid.Column="1" Text="{Binding LastName}"/>
+        </Grid>
+        <Grid Padding="10" ColumnDefinitions="Auto,*">
+            <Label Grid.Column="0" Text="Имя: " VerticalTextAlignment="Center"/>
+            <Entry Grid.Column="1" Text="{Binding FirstName}"/>
+        </Grid>
+        <Grid Padding="10" ColumnDefinitions="Auto,*">
+            <Label Grid.Column="0" Text="Отчество: " VerticalTextAlignment="Center"/>
+            <Entry Grid.Column="1" Text="{Binding MiddleName}"/>
+        </Grid>
+        <HorizontalStackLayout Padding="10">
+            <Label Text="Пол: " VerticalTextAlignment="Center"/>
+            <Picker ItemsSource="{Binding Sexes}" SelectedItem="{Binding Sex}"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Padding="10">
+            <Label Text="Дата рождения: " VerticalTextAlignment="Center"/>
+            <DatePicker Date="{Binding BirthDate, Converter=}" />
+        </HorizontalStackLayout>
+    </StackLayout>
+
+</ContentPage>
