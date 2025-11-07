@@ -7,6 +7,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <local:DataViewModel x:Key="vm"/>
+            <local:DateOnlyConverter x:Key="converter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -29,8 +30,18 @@
         </HorizontalStackLayout>
         <HorizontalStackLayout Padding="10">
             <Label Text="Дата рождения: " VerticalTextAlignment="Center"/>
-            <DatePicker Date="{Binding BirthDate, Converter=}" />
+            <DatePicker Date="{Binding BirthDate, Converter={StaticResource converter}}" />
         </HorizontalStackLayout>
+        <HorizontalStackLayout Padding="10">
+            <Label Text="Замужем?" VerticalTextAlignment="Center"/>
+            <Switch IsToggled="False" Margin="10,0,0,0"/>
+        </HorizontalStackLayout>
+        <VerticalStackLayout Padding="10">
+            <Label Text="Дополнительная информация: " VerticalTextAlignment="Center"/>
+            <Editor AutoSize="TextChanges"/> 
+        </VerticalStackLayout>
+
+        <Button Text="Сохранить" Margin="10,30,10,10" Command="{Binding saveCommand}"/>
     </StackLayout>
 
 </ContentPage>

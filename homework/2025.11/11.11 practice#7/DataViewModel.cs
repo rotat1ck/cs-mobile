@@ -1,12 +1,18 @@
-﻿using System.Collections.ObjectModel;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
+using CommunityToolkit.Mvvm.Input;
+using Microsoft.Maui.Controls.Platform;
 
 namespace practice7 {
     internal class DataViewModel : INotifyPropertyChanged {
         public event PropertyChangedEventHandler? PropertyChanged;
         public IEnumerable<Sex> Sexes { get; set; } = Enum.GetValues<Sex>();
         private Data data = new Data();
+        public ICommand saveCommand { get; }
+        public DataViewModel() {
+            saveCommand = new AsyncRelayCommand(SaveToFile);
+        }
         private void OnPropertyChanged([CallerMemberName] string prop = "") {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
@@ -16,6 +22,7 @@ namespace practice7 {
                 using StreamWriter writer = new StreamWriter(fs);
                 await writer.WriteLineAsync(data.ToString());
             }
+            await Application.Current.MainPage.DisplayAlert("Успех", "Запись добавлена в файл out.txt", "ОК");
         }
 
         public string LastName {
@@ -23,6 +30,7 @@ namespace practice7 {
             set {
                 data.LastName = value;
                 OnPropertyChanged();
+
             }
         }
         public string FirstName {
