@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:navigation"
+             x:Class="navigation.UserPage"
+             Title="UserPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:User Key="user"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout BindingContext="{StaticResource user}">
+        <Entry x:Name="nameEntry" Text="{Binding Name}" />
+        <StackLayout Orientation="Horizontal">
+            <Stepper x:Name="ageStepper" Minimum="0" Maximum="110" 
+                     Increment="1" Value="{Binding Age}"/>
+            <Label x:Name="ageLabel" FontSize="18" Text="{Binding Source={x:Reference ageStepper}, Path=Value}"/>
+        </StackLayout>
+        <Button Text="Сохранить" Clicked="Button_Clicked" />
+    </StackLayout>
+    
+</ContentPage>
