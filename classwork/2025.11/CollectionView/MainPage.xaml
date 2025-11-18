@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollectionView.MainPage">
+
+    <CollectionView>
+        <CollectionView.ItemsSource>
+            <x:Array Type="{x:Type x:String}"> 
+                <x:String>Olga</x:String>
+                <x:String>Anna</x:String>
+                <x:String>Oleg</x:String>
+            </x:Array>
+        </CollectionView.ItemsSource>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Label Text="{Binding}" FontSize="16"
+                       TextColor="#1565C0"/>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+
+</ContentPage>
