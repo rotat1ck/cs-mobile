@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="todo_app.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="25">
+            <Label Text="Title" />
+            <Entry Placeholder="Please enter the title" x:Name="entryTitle"/>
+            <Label Text="Description" />
+            <Editor Placeholder="Please enter the description for thi ToDoItem" 
+                    x:Name="entryDescription"
+                    AutoSize="TextChanges"/>
+            <Label Text="IsComplete" />
+            <CheckBox IsChecked="False" x:Name="checkBoxIsDone"/>
+            <Label Text="Completion Date" />
+            <DatePicker x:Name="datePickerCompletionDate"/>
+            <Button x:Name="buttonSumbit" Clicked="buttonSumbit_Clicked"/>
+
+            <Label x:Name="labelToStringResult" Text="Please fil     l"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
