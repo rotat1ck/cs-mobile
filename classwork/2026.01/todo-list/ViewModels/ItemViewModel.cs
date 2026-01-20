@@ -7,7 +7,7 @@ using todo_list.Models;
 using todo_list.Repositories;
 
 namespace todo_list.ViewModels {
-    internal partial class ItemViewModel : ViewModel {
+    public partial class ItemViewModel : ViewModel {
         private readonly ITodoItemRepository repository;
 
         [ObservableProperty]

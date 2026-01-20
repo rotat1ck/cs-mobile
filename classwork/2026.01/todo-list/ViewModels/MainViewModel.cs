@@ -3,9 +3,10 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using todo_list.Models;
 using todo_list.Repositories;
+using todo_list.Views;
 
 namespace todo_list.ViewModels {
-    internal partial class MainViewModel : ViewModel {
+    public partial class MainViewModel : ViewModel {
         private readonly ITodoItemRepository repository;
         private readonly IServiceProvider services;
 
@@ -24,6 +25,7 @@ namespace todo_list.ViewModels {
         public MainViewModel(ITodoItemRepository repository, IServiceProvider services) {
             this.repository = repository;
             this.services = services;
+            Task.Run(LoadDataAsync);
 
             repository.OnItemAdded += (s, e) => {
                 items.Add(CreateTodoItemViewModel(e));

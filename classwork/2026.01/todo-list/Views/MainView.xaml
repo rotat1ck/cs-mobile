@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:todo_list.ViewModels"
+             xmlns:converters="clr-namespace:todo_list.Converters"
+             x:Class="todo_list.Views.MainView"
+             x:DataType="viewModels:MainViewModel"
+             Title="MainView">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:StatusColorConverter x:Key="statusColorConverter"/>
+            <converters:FilterTextConverter x:Key="filterTextConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <Grid RowDefinitions="Auto,*">
+        <Button Style="{DynamicResource FilterButton}" 
+                Text="{Binding ShowAll, Converter={StaticResource filterTextConverter}, StringFormat='Filter: {0}'}"
+                BackgroundColor="{DynamicResource ActiveColor}" TextColor="Black"
+                Command="{Binding ToggleFilterCommand}" >
+            <Button.Triggers>
+                <DataTrigger TargetType="Button" Binding="{Binding ShowAll}" Value="True" >
+                    <Setter Property="BackgroundColor" Value="{DynamicResource CompletedColor}" />
+                    <Setter Property="TextColor" Value="White" />
+                </DataTrigger>
+            </Button.Triggers>
+        </Button>
+
+        <ListView x:Name="ItemListView" Grid.Row="1" RowHeight="70" 
+                  ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="viewModels:TodoItemViewModel">
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="{Binding StatusText}" Command="{Binding ToggleCompletedCommand}"/>
+                        </ViewCell.ContextActions>
+
+                        <Grid Padding="15,10" RowDefinitions="*,*" ColumnDefinitions="10,*">
+                            <BoxView Grid.RowSpan="2" Color="{Binding Item.Completed, Converter={StaticResource statusColorConverter}}" />
+                            <Label Grid.Column="1" Padding="5,0,0,0" Text="{Binding Item.Title}" FontSize="Medium" />
+                            <Label Grid.Column="1" Padding="5,0,0,0" Text="{Binding Item.Due, StringFormat='{0:MMMM d,yyyy}'}"
+                                   Grid.Row="1" VerticalTextAlignment="End" FontSize="Micro"/>
+                            <Label Grid.Column="1" Grid.Row="1" HorizontalTextAlignment="End"
+                                   Text="Completed" FontSize="Medium" IsVisible="{Binding Item.Completed}"
+                                   TextColor="{StaticResource CompletedColor}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

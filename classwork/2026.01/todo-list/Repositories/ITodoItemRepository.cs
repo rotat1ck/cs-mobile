@@ -4,7 +4,7 @@ using System.Text;
 using todo_list.Models;
 
 namespace todo_list.Repositories {
-    internal interface ITodoItemRepository {
+    public interface ITodoItemRepository {
         event EventHandler<TodoItem> OnItemAdded;
         event EventHandler<TodoItem> OnItemUpdated;
 

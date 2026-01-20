@@ -9,6 +9,23 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <ResourceDictionary>
+                <Style TargetType="NavigationPage">
+                    <Setter Property="BackgroundColor" Value="#A25EBB"/>
+                    <Setter Property="BarTextColor" Value="#FFFFFF"/>
+                </Style>
+                
+                <Style x:Key="FilterButton" TargetType="Button">
+                    <Setter Property="Margin" Value="15" />
+                    <Setter Property="BorderWidth" Value="1" />
+                    <Setter Property="BorderColor" Value="Silver" />
+                    <Setter Property="TextColor" Value="Black" />
+                </Style>
+
+                <Color x:Key="CompletedColor">#1C8859</Color>
+                <Color x:Key="ActiveColor">#d3d3d3</Color>
+            </ResourceDictionary>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

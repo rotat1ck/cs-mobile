@@ -5,7 +5,7 @@ using SQLite;
 using todo_list.Models;
 
 namespace todo_list.Repositories {
-    internal class TodoItemRepository : ITodoItemRepository {
+    class TodoItemRepository : ITodoItemRepository {
         private SQLiteAsyncConnection connection;
 
         public event EventHandler<TodoItem> OnItemAdded;
@@ -37,7 +37,7 @@ namespace todo_list.Repositories {
         }
 
         private async Task CreateConnectionAsync() {
-            if (connection == null) {
+            if (connection != null) {
                 return;
             }
 

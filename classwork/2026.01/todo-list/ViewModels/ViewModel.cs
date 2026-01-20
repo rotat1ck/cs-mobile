@@ -2,8 +2,7 @@
 
 namespace todo_list.ViewModels {
     [ObservableObject]
-    internal partial class ViewModel {
+    public abstract partial class ViewModel {
         public INavigation Navigation { get; set; }
-
     }
 }
