@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="news_app.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:news_app.Views"
+    xmlns:local="clr-namespace:news_app"
+    >
+
+    <FlyoutItem Title="Home" >
+        <ShellContent Title="HeadLines" Route="headlines"  
+                      ContentTemplate="{DataTemplate views:HeadlinesView}" />
+        <Tab Title="News" Route="news" >
+            <ShellContent Title="Local" Route="local" ContentTemplate="{DataTemplate views:HeadlinesView}"/>
+            <ShellContent Title="Global" Route="global" ContentTemplate="{DataTemplate views:HeadlinesView}"/>
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Settings" >
+        <ContentPage Title="Settings"/>
+    </FlyoutItem>
+
+    <ShellContent Title="About">
+        <ContentPage Title="About" />
+    </ShellContent>
+
+</Shell>

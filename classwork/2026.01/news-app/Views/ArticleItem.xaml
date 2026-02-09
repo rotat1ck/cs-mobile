@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="news_app.Views.ArticleItem"
+             xmlns:models="clr-namespace:news_app.Models"
+             x:DataType="models:Article"
+             Title="ArticleItem">
+
+    <Grid Margin="0"
+          RowDefinitions="10,40,15,10,1"
+          ColumnDefinitions="65,*">
+
+        <Label Grid.Row="1" Grid.Column="1" Text="{Binding Title}" Padding="10,0,0,0"
+               FontSize="Small" FontAttributes="Bold" />
+
+        <Label Grid.Row="2" Grid.Column="1" 
+               Text="{Binding PublishedAt, StringFormat='{0:MMMM d, yyyy}'}" Padding="10,0,0,0"
+               FontSize="Micro"/>
+
+        <Frame Grid.Row="1" Grid.RowSpan="2" CornerRadius="15" IsClippedToBounds="True"
+               Padding="0" Margin="0" BackgroundColor="#667788"
+               IsVisible="{x:OnPlatform Default=False, iOS=True}">
+            <Image Source="{Binding UrlToImage}" Aspect="AspectFill" HeightRequest="55" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </Frame>
+
+        <Border Grid.Row="1" Grid.RowSpan="2" StrokeShape="RoundRectangle 15"
+                Padding="0" Margin="0" BackgroundColor="#667788"
+                IsVisible="{x:OnPlatform Default=True, iOS=False}">
+            <Image Source="{Binding UrlToImage}" Aspect="AspectFill" HeightRequest="55" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </Border>
+
+        <BoxView Grid.Row="4" Grid.ColumnSpan="2" BackgroundColor="LightGray" />
+
+    </Grid>
+</ContentPage>
