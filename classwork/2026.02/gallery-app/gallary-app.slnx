@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="gallery-app.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+</Solution>
