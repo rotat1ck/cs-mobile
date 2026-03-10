@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using shop_app.Services;
 using shop_app.ViewModels;
 using shop_app.Views;
 
@@ -23,6 +24,10 @@ namespace shop_app {
 
             builder.Services.AddTransient<ItemView>();
             builder.Services.AddTransient<ItemViewModel>();
+
+            builder.Services.AddSingleton<ICartService, CartService>();
+            builder.Services.AddTransient<CartView>();
+            builder.Services.AddTransient<CartViewModel>();
 
             return builder.Build();
         }

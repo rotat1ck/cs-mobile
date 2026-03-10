@@ -44,27 +44,28 @@
 
             <!-- К оплате -->
             <Grid Padding="40,0,40,0" HeightRequest="82" >
-                <Frame BackgroundColor="#EB6434" CornerRadius="15" BorderColor="Transparent"
-                       Padding="35,30,35,30">
+                <Border BackgroundColor="#EB6434" StrokeShape="RoundRectangle 15" StrokeThickness="0"
+                        Padding="35,30,35,30">
                     <Grid>
-                        <!-- Левая надпись -->
-                        <Grid>
-                            <!-- Надпись -->
-                            <Label Text="CHECKOUT" FontFamily="MonumentExtended" 
-                                       FontSize="14" TextColor="#FFFFFF" VerticalOptions="Center"
-                                       WidthRequest="104" HorizontalOptions="Start"/>
+                        <!-- Надпись -->
+                        <Label Text="CHECKOUT" FontFamily="MonumentExtended" 
+                               FontSize="14" TextColor="#FFFFFF" VerticalOptions="Center"
+                               WidthRequest="104" HorizontalOptions="Start"/>
 
-                            <!-- Стрелочка -->
-                            <Image HeightRequest="13" WidthRequest="19" 
-                                   HorizontalOptions="Start" Margin="114,0,0,0"
-                                   Source="arrow_checkout.png" Aspect="AspectFit"/>
-                        </Grid>
+                        <!-- Стрелочка -->
+                        <Image HeightRequest="13" WidthRequest="19" 
+                               HorizontalOptions="Start" Margin="114,0,0,0"
+                               Source="arrow_checkout.png" Aspect="AspectFit"/>
 
                         <!-- Ценник -->
                         <Label Text="{Binding Item.Price, StringFormat='$ {0}'}" HorizontalOptions="End"
                                FontFamily="MonumentExtended" FontSize="18"/>
                     </Grid>
-                </Frame>
+
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding AddToCartCommand}"/>
+                    </Border.GestureRecognizers>
+                </Border>
             </Grid>
         </VerticalStackLayout>
     </ScrollView>

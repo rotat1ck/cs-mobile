@@ -5,6 +5,7 @@ namespace shop_app {
         public AppShell() {
             InitializeComponent();
             Routing.RegisterRoute("itemPage", typeof(ItemView));
+            Routing.RegisterRoute("cartPage", typeof(CartView));
         }
     }
 }

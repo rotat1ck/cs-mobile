@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using shop_app.Models;
+using shop_app.Services;
 using System.Text.Json;
 
 namespace shop_app.ViewModels;
@@ -37,5 +38,10 @@ public partial class StoreViewModel : ObservableObject {
     public async Task ItemSelected(Item item) {
         var json = JsonSerializer.Serialize(item);
         await Shell.Current.GoToAsync($"itemPage?itemJson={Uri.EscapeDataString(json)}");
+    }
+
+    [RelayCommand]
+    public async Task GotoCart() {
+        await Shell.Current.GoToAsync("cartPage");
     }
 }

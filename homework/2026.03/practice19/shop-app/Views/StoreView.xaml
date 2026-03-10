@@ -32,6 +32,9 @@
                 <Border Grid.Column="2" HeightRequest="56" WidthRequest="56" StrokeShape="RoundRectangle 28"
                         StrokeThickness="0" BackgroundColor="#F6F6F6" Padding="15">
                     <Image Source="bag.png" Aspect="AspectFit"/>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GotoCartCommand}"/>
+                    </Border.GestureRecognizers>
                 </Border>
             </Grid>
 

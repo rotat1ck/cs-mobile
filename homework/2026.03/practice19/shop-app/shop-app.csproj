@@ -72,6 +72,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\CartView.xaml.cs">
+	    <DependentUpon>CartView.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\ItemView.xaml.cs">
 	    <DependentUpon>ItemView.xaml</DependentUpon>
 	  </Compile>
@@ -82,6 +85,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Controls\ItemControl.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\CartView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\StoreView.xaml">
