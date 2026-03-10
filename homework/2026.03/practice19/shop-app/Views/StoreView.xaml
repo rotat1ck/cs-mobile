@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:shop_app.Models"
+             xmlns:viewModels="clr-namespace:shop_app.ViewModels"
+             xmlns:controls="clr-namespace:shop_app.Controls"
+             x:Class="shop_app.Views.StoreView"
+             BackgroundColor="#FFFFFF"
+             MinimumWidthRequest="430"
+             x:DataType="viewModels:StoreViewModel">
+    
+    <ScrollView>
+        <VerticalStackLayout>
+            <!-- Вверх -->
+            <Grid Padding="40,40,40,30" ColumnSpacing="10" HorizontalOptions="Fill">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Категории -->
+                <Border Grid.Column="0" HeightRequest="56" WidthRequest="56" StrokeShape="RoundRectangle 28"
+                        StrokeThickness="0" BackgroundColor="#F6F6F6" Padding="15">
+                    <Image Source="category.png" Aspect="AspectFit"/>
+                </Border>
+
+                <!-- Лого -->
+                <Image Grid.Column="1" Source="logo.png" Aspect="Center" HeightRequest="20" WidthRequest="150" HorizontalOptions="Center" />
+
+                <!-- Корзина -->
+                <Border Grid.Column="2" HeightRequest="56" WidthRequest="56" StrokeShape="RoundRectangle 28"
+                        StrokeThickness="0" BackgroundColor="#F6F6F6" Padding="15">
+                    <Image Source="bag.png" Aspect="AspectFit"/>
+                </Border>
+            </Grid>
+
+            <!-- Горизонтальная листалка -->
+            <ScrollView Padding="40,0,40,24" Orientation="Horizontal">
+                <HorizontalStackLayout Spacing="13">
+                    <!-- Желтая кнопка -->
+                    <Border HeightRequest="169" WidthRequest="169" StrokeShape="RoundRectangle 20"
+                            StrokeThickness="0" BackgroundColor="#F4C600">
+                        <Grid Padding="10,10,10,10">
+                            <Label FontFamily="MonumentExtended" FontSize="14" 
+                                   Text="TRENDING PRODUCTS" TextColor="#FFFFFF"
+                                   MinimumWidthRequest="112"/>
+                            <Image Source="arrow_filled.png" Aspect="AspectFit" 
+                                   HeightRequest="28" WidthRequest="43" HorizontalOptions="End" VerticalOptions="End"/>
+                        </Grid>
+                    </Border>
+
+                    <!-- Красная кнопка -->
+                    <Border HeightRequest="169" WidthRequest="169" StrokeShape="RoundRectangle 20"
+                            StrokeThickness="0" BackgroundColor="#EB6434">
+                        <Grid Padding="10,10,10,10">
+                            <Label FontFamily="MonumentExtended" FontSize="14" 
+                                   Text="SALE PRODUCTS" TextColor="#FFFFFF"
+                                   MinimumWidthRequest="112"/>
+                            <Image Source="arrow_unfilled.png" Aspect="AspectFit" 
+                                   HeightRequest="28" WidthRequest="43" HorizontalOptions="End" VerticalOptions="End"/>
+                        </Grid>
+                    </Border>
+                </HorizontalStackLayout>
+            </ScrollView>
+        
+            <!-- Надпись продуктов-->
+            <Label Padding="40,0,40,22" Text="POPULAR PRODUCTS"
+                   FontFamily="MonumentExtended" FontSize="18"/>
+        
+            <!-- Шмотки -->
+            <ScrollView Padding="40,0,40,30" MinimumHeightRequest="270" MaximumHeightRequest="565">
+                <CollectionView ItemsSource="{Binding Items}">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="10" HorizontalItemSpacing="10"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Item">
+                            <Border>
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ItemSelectedCommand, Source={RelativeSource AncestorType={x:Type viewModels:StoreViewModel}}}" CommandParameter="{Binding .}" />
+                                </Border.GestureRecognizers>
+                                <controls:ItemControl ItemImageSource="{Binding ImageUri}" ItemName="{Binding Name}"
+                                                  ItemPrice="{Binding Price}" ItemRating="{Binding Rating}"/>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

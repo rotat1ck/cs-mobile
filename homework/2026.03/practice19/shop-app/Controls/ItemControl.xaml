@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Border xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="shop_app.Controls.ItemControl"
+             x:Name="root"
+             HeightRequest="273" MinimumWidthRequest="350"
+             StrokeShape="RoundRectangle 20" StrokeThickness="0" Padding="0">
+
+    <Border.Background>
+        <LinearGradientBrush StartPoint="0.3,0" EndPoint="0.7,1">
+            <GradientStop Color="#F5F6F1" Offset="0.1861" />
+            <GradientStop Color="#E6E5E3" Offset="0.6563" />
+        </LinearGradientBrush>
+    </Border.Background>
+
+    <Grid BindingContext="{x:Reference root}">
+        <!-- Изображение товара -->
+        <Image Source="{Binding ItemImageSource}"
+               Aspect="AspectFit"/>
+
+        <Grid>
+            <!-- Левая часть: название и цена -->
+            <StackLayout Spacing="10" HorizontalOptions="Start" VerticalOptions="End" Margin="25,0,0,22">
+                <!-- Название товара -->
+                <Label Text="{Binding ItemName}"
+                       HorizontalOptions="Start" VerticalOptions="End"
+                       HeightRequest="38" WidthRequest="248"
+                       FontFamily="MonumentExtended" FontSize="16" LineBreakMode="WordWrap"/>
+
+                <!-- Ценник -->
+                <Border HeightRequest="31" WidthRequest="103" Padding="0"
+                        VerticalOptions="End" HorizontalOptions="Start" BackgroundColor="#FFFFFF"
+                        StrokeThickness="0">
+                    <Label Text="{Binding ItemPrice, StringFormat='$ {0}'}"
+                           HorizontalOptions="Center" VerticalOptions="Center"
+                           FontFamily="MonumentExtended" FontSize="14" TextColor="#EB6434"/>
+                </Border>
+            </StackLayout>
+
+            <!-- Правая часть: рейтинг и корзина -->
+            <Grid Padding="20,20,20,20">
+                <!-- Рейтинг -->
+                <Border VerticalOptions="Start" HorizontalOptions="End" HeightRequest="30" WidthRequest="70"
+                        Padding="0" BackgroundColor="#FFFFFF" StrokeThickness="0">
+                    <HorizontalStackLayout Padding="10,0,0,0" Spacing="5">
+                        <Image Source="star.png" Aspect="AspectFit"
+                               HorizontalOptions="Start" VerticalOptions="Center"
+                               HeightRequest="13" WidthRequest="13"/>
+                        <Label VerticalOptions="Center" WidthRequest="30" HeightRequest="15"
+                               Text="{Binding ItemRating}" FontFamily="MonumentExtended" FontSize="14" />
+                    </HorizontalStackLayout>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</Border>
